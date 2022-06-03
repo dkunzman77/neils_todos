@@ -1,0 +1,11 @@
+# don't ever lint node_modules
+node_modules
+
+# probably want different rules for cypress in the future
+cypress
+
+dist
+
+express.js
+
+public

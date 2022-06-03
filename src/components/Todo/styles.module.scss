@@ -1,0 +1,35 @@
+.todo {
+    border: 1px solid #cdcdcd;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+    padding: 1rem 2rem 1rem 1rem;
+    position: relative;
+  
+    &__heading {
+      margin: 0;
+      font-size: 1rem;
+      font-weight: 200;
+    }
+  
+    &__icon {
+      position: absolute;
+      right: 1rem;
+      &--completed {
+        &::before {
+          content: "\f058";
+          color: green;
+          font-family: "Font Awesome 5 Free";
+        }
+      }
+      &--incomplete {
+        &::before {
+          content: "";
+          border: 1px solid blue;
+          border-radius: 50%;
+          width: 0.875rem;
+          height: 0.875rem;
+          display: flex;
+        }
+      }
+    }
+  }
