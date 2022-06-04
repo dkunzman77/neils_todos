@@ -1,6 +1,6 @@
 module.exports = (api) => {
   api.cache.using(() => process.env.NODE_ENV)
-  const plugins = ['neil-is-awesome']
+  const plugins = []
 
   const presets = [
     [

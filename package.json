@@ -32,6 +32,7 @@
     "eslint-plugin-react": "^7.29.4",
     "eslint-plugin-react-hooks": "^4.5.0",
     "eslint-plugin-unused-imports": "^2.0.0",
+    "file-loader": "^6.2.0",
     "fork-ts-checker-webpack-plugin": "^7.2.11",
     "html-webpack-plugin": "^5.5.0",
     "prettier": "^2.6.2",
@@ -47,6 +48,7 @@
   },
   "dependencies": {
     "classnames": "^2.3.1",
+    "core-js": "^3.22.8",
     "react": "^18.1.0",
     "react-dom": "^18.1.0"
   },

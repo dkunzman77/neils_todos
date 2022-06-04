@@ -3,13 +3,15 @@
  */
 import React from 'react'
 import App from './App'
-import { createRoot } from 'react-dom/client'
+import * as ReactDOMClient from 'react-dom/client'
+
+// import { createRoot } from 'react-dom/client'
 import './global.scss'
 
-const container = document.getElementById('app')
+const container = document.getElementById('root')
 
 if (container) {
-  const root = createRoot(container)
+  const root = ReactDOMClient.createRoot(container)
 
   root.render(<App />)
 } else {

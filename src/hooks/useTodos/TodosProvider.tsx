@@ -32,9 +32,20 @@ export const TodosProvider: React.FC<Props> = ({ children }) => {
         const todos = await (
           await fetch('https://jsonplaceholder.typicode.com/todos')
         ).json()
-      } catch (err) {}
+        console.warn('todos effect', todos)
+        setState({
+          todos: todos,
+          allTodos: todos,
+          isError: false,
+          isLoading: false,
+        })
+      } catch (err) {
+        console.error(err)
+      }
     })()
   }, [])
+
+  console.warn('state', state)
 
   return (
     <TodosContext.Provider value={[state, setState]}>

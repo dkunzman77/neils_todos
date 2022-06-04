@@ -1,5 +1,6 @@
 import React from 'react'
 import { TodosContext } from './TodosProvider'
+import { TodosStateType } from './types'
 import * as fromUtils from './utils'
 
 /**
@@ -12,30 +13,34 @@ export const useTodos = () => {
   /**
    * @summary Returns all complete todos.
    */
-  const filterTodosByComplete = () => {
-    setState((args) => {
-      return {
-        isLoading: false,
-        isError: false,
-        todos: fromUtils.filterTodosByComplete(args.allTodos),
-        allTodos: args.allTodos,
-      }
-    })
+  const filterTodosByComplete = (args: TodosStateType) => {
+    //setState((args) => {
+    return {
+      isLoading: false,
+      isError: false,
+      todos:
+        args.allTodos === undefined
+          ? []
+          : fromUtils.filterTodosByComplete(args.allTodos),
+      allTodos: args.allTodos,
+    }
   }
   /**
    * @summary Returns all incomplete todos.
    */
-  const filterTodosByIncomplete = () => {
-    setState((args) => {
-      return {
-        isLoading: false,
-        isError: false,
-        todos: fromUtils.filterTodosByIncomplete(args.allTodos),
-        allTodos: args.allTodos,
-      }
-    })
+  const filterTodosByIncomplete = (args: TodosStateType) => {
+    //setState((args) => {
+    return {
+      isLoading: false,
+      isError: false,
+      todos:
+        args.allTodos === undefined
+          ? []
+          : fromUtils.filterTodosByIncomplete(args.allTodos),
+      allTodos: args.allTodos,
+    }
   }
-  
+
   return {
     ...state,
     filterTodosByComplete,
