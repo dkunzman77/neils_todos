@@ -6,7 +6,7 @@ import App from './App'
 import * as ReactDOMClient from 'react-dom/client'
 
 // import { createRoot } from 'react-dom/client'
-import './global.scss'
+import './global.scss' // --- ughy webpack hell
 
 const container = document.getElementById('root')
 

@@ -13,6 +13,7 @@ const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin')
  * @type {import('webpack-dev-server').WebpackConfiguration}
  */
 module.exports = {
+  mode: 'development',
   entry: resolve(__dirname, '../src/index.tsx'),
   output: {
     path: resolve(__dirname, '../dist'),
@@ -27,36 +28,15 @@ module.exports = {
     rules: [
       {
         test: /\.scss$/i,
-        exclude: /\.module\.scss$/i,
+        exclude: /(node_modules)/,
         use: [
-          {
-            loader: 'css-loader',
-            options: {
-              importLoaders: 1,
-              modules: {
-                mode: 'icss',
-              },
-            },
-          },
-          {
-            loader: 'sass-loader',
-          },
           {
             loader: 'style-loader',
           },
-        ],
-      },
-      {
-        test: /\.module\.scss$/i,
-        use: [
           {
             loader: 'css-loader',
             options: {
-              importLoaders: 1,
-              modules: {
-                localIdentName: '[local]__[hash:base64:5]',
-                mode: 'local',
-              },
+              modules: true,
             },
           },
           {
@@ -64,6 +44,24 @@ module.exports = {
           },
         ],
       },
+      // {
+      //   test: /\.module\.scss$/i,
+      //   use: [
+      //     {
+      //       loader: 'css-loader',
+      //       options: {
+      //         importLoaders: 1,
+      //         modules: {
+      //           localIdentName: '[local]__[hash:base64:5]',
+      //           mode: 'local',
+      //         },
+      //       },
+      //     },
+      //     // {
+      //     //   loader: 'sass-loader',
+      //     // },
+      //   ],
+      // },
       {
         test: /\.(png|jpe?g|gif)$/i,
         use: [
