@@ -12,7 +12,7 @@ type Props = fromTypes.MakeOptional<fromTypes.TodoType, 'id' | 'userId'>
  */
 export const Todo: React.FC<Props> = ({ title, id, completed }) => (
   <div className={styles.todo}>
-    <div>{id}</div>
+    <div style={{ paddingRight: '20px' }}>{id}</div>
     <span
       className={cn(styles.todo__icon, {
         [styles['todo__icon--completed']]: completed,
